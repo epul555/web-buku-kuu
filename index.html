@@ -1,0 +1,1348 @@
+
+<!DOCTYPE html>`
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Buku-kuu</title>
+    <meta name="description" content="Toko buku statis ala Gramedia: katalog, kategori, dan rekomendasi." />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Header & Navigasi -->
+    <header class="header">
+      <div class="container header__inner">
+        <a class="brand" href="#home" aria-label="Beranda">
+          <!-- Logo sederhana -->
+          <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M5 4h12a2 2 0 0 1 2 2v12l-5-3-5 3-4-2V6a2 2 0 0 1 2-2Z"/>
+          </svg>
+          <span>Buku-kuu</span>
+        </a>
+
+        <nav class="nav" aria-label="Navigasi utama">
+          <button id="openCart" class="cart-btn">
+            🛒 Keranjang (<span id="cartCount">0</span>)
+          </button>
+          
+          <a href="#katalog">Katalog</a>
+          <a href="#kategori">Kategori</a>
+          <a href="#terlaris">Terlaris</a>
+          <a href="#tentang">Tentang</a>
+          <a href="#kontak" class="btn btn--primary">Kontak</a>
+        </nav>
+      </div>
+    </header>
+
+<!-- Hero -->
+<section id="home" class="hero">
+  <div class="container hero_wrapper">
+
+    <!--  TEKS -->
+    <div class="hero_content">
+      <h1>Temukan buku yang menggerakkan pikiran</h1>
+      <p>
+        Kurasi judul-judul terbaik untuk belajar, berkarya, dan bertumbuh
+        dari fiksi memikat hingga nonfiksi penuh wawasan.
+      </p>
+
+      <div class="hero_actions">
+        <a href="#katalog" class="btn btn--primary">Lihat Katalog</a>
+        <a href="#terlaris" class="btn btn--ghost">Lihat Terlaris</a>
+      </div>
+    </div>
+
+    <!--  SLIDER -->
+    <div class="hero_visual">
+
+      <button class="arrow" id="prv">
+        <img src="images/left-arrow.png" alt="">
+      </button>
+
+      <div class="box">
+        <img src="images/metamorphosis.jpg" class="im">
+        <img src="images/the.jpg" class="im-m">
+        <img src="images/zara.jpg" class="im">
+      </div>
+
+      <button class="arrow" id="next">
+        <img src="images/right-arrow.png" alt="">
+      </button>
+
+    </div>
+
+  </div>
+</section>
+
+
+    <!-- Pencarian -->
+    <section class="search">
+      <div class="container">
+        <form class="search__form" onsubmit="return false" aria-label="Pencarian buku">
+          <input type="text" placeholder="Cari judul, penulis, atau kategori..." aria-label="Kolom pencarian" />
+          <button class="btn btn--primary" type="button">Cari</button>
+        </form>
+        <p class="search__hint">Ini situs statis. Tombol Cari hanya contoh UI (tidak terhubung ke backend).</p>
+      </div>
+    </section>
+
+    <section class="promo">
+      <div class="container promo__grid">
+    
+        <!-- PROMO BESAR -->
+        <a href="#katalog" class="promo_main">
+          <img src="images/promo-1.png" alt="Promo Cashback">
+          <span class="promo_btn">Semua Promo</span>
+        </a>
+    
+        <!-- PROMO KANAN -->
+        <div class="promo_side">
+          <a href="#katalog" class="promo_card">
+            <img src="images/promo-2.png" alt="Promo Komik">
+          </a>
+    
+          <a href="#katalog" class="promo_card">
+            <img src="images/promo-3 .png" alt="Promo Manga">
+          </a>
+        </div>
+    
+      </div>
+    </section>
+    
+    <!-- Kategori -->
+    <section id="kategori" class="section">
+      <div class="container">
+        <h2>Kategori pilihan</h2>
+        <div class="grid grid--4">
+          <a class="card card--category" href="#katalog" aria-label="Kategori Fiksi">
+            <div class="card__icon">📚</div>
+            <h3>Fiksi</h3>
+            <p>Novel, cerpen, dan sastra yang kaya emosi.</p>
+          </a>
+          <a class="card card--category" href="#katalog" aria-label="Kategori Nonfiksi">
+            <div class="card__icon">🧠</div>
+            <h3>Nonfiksi</h3>
+            <p>Bisnis, sains, sejarah, dan pengembangan diri.</p>
+          </a>
+          <a class="card card--category" href="#katalog" aria-label="Kategori Pendidikan">
+            <div class="card__icon">🎓</div>
+            <h3>Pendidikan</h3>
+            <p>Buku pelajaran, referensi, dan ujian.</p>
+          </a>
+          <a class="card card--category" href="#katalog" aria-label="Kategori Anak">
+            <div class="card__icon">🌈</div>
+            <h3>Anak</h3>
+            <p>Cerita bergambar dan kegiatan kreatif.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Katalog -->
+    <section id="katalog" class="section section--alt">
+      <div class="container">
+        <h2>Katalog buku</h2>
+
+        <div class="filters">
+          <div class="filters__group">
+            <label class="filters__label">Urutkan:</label>
+            <select aria-label="Urutkan katalog">
+              <option>Terbaru</option>
+              <option>Terlaris</option>
+              <option>Harga: Rendah ke Tinggi</option>
+              <option>Harga: Tinggi ke Rendah</option>
+            </select>
+          </div>
+          <div class="filters__group">
+            <label class="filters__label">Kategori:</label>
+            <select aria-label="Filter kategori">
+              <option>Semua</option>
+              <option>Fiksi</option>
+              <option>Nonfiksi</option>
+              <option>Pendidikan</option>
+              <option>Anak</option>
+              <option>Romance</option>
+              <option>Filsafat</option>
+
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid--5">
+<!-- 1. 5 CM -->
+<article class="card card--book"
+data-genre="fiksi"
+data-price="90000"
+data-popular="true">
+  <div class="card__media">
+    <picture>
+      <source srcset="images/5-cm.avif" type="image/avif">
+      <img src="images/5-cm.avif" alt="5 Cm" loading="lazy">
+    </picture>
+  </div>
+  <div class="card__body">
+    <h3>5 Cm</h3>
+    <p class="muted">Donny Dhirgantoro • Fiksi</p>
+    <p>Persahabatan dan mimpi lima sahabat.</p>
+    <div class="card__meta">
+      <span class="price">Rp 90.000</span>
+      <button class="btn btn--ghost btn-detail"
+        data-title="5 Cm"
+        data-author="Donny Dhirgantoro"
+        data-desc="Kisah lima sahabat yang menguji mimpi, persahabatan, dan keyakinan dengan menaklukkan puncak Mahameru."
+      >Detail</button>
+      <button class="btn add-cart "
+        data-id="b001"
+        data-title="5 CM"
+        data-price="90000">
+  + Keranjang
+</button>
+
+    </div>
+  </div>
+</article>
+
+<!-- 2. CINTA BRONTOSAURUS -->
+<article class="card card--book"
+data-genre="fiksi"
+data-price="52000"
+data-popular="false">
+  <div class="card__media">
+    <picture>
+      <source srcset="images/cinta-brontosaurus.avif" type="image/avif">
+      <img src="images/cinta-brontosaurus.avif" alt="Cinta Brontosaurus" loading="lazy">
+    </picture>
+  </div>
+  <div class="card__body">
+    <h3>Cinta Brontosaurus</h3>
+    <p class="muted">Raditya Dika • Fiksi</p>
+    <p>Kumpulan cerita cinta dan humor.</p>
+    <div class="card__meta">
+      <span class="price">Rp 52.000</span>
+      <button class="btn btn--ghost btn-detail"
+        data-title="Cinta Brontosaurus"
+        data-author="Raditya Dika"
+        data-desc="Cerita humor tentang cinta, patah hati, dan kegagalan dengan gaya khas Raditya Dika yang ringan dan jenaka."
+      >Detail</button>
+      <button class="btn add-cart"
+        data-id="b002"
+        data-title="Cinta Brontosaurus"
+        data-price="52000">
+  + Keranjang
+</button>
+    </div>
+  </div>
+</article>
+
+<!-- 3. DILAN 1990 -->
+<article class="card card--book"
+data-genre="romance"
+data-price="99000"
+data-popular="true">
+  <div class="card__media">
+    <picture>
+      <source srcset="images/dilan-1990.avif" type="image/avif">
+      <img src="images/dilan-1990.avif" alt="Dilan 1990" loading="lazy">
+    </picture>
+  </div>
+  <div class="card__body">
+    <h3>Dilan 1990</h3>
+    <p class="muted">Pidi Baiq • Romance</p>
+    <p>Kisah cinta SMA legendaris.</p>
+    <div class="card__meta">
+      <span class="price">Rp 99.000</span>
+      <button class="btn btn--ghost btn-detail"
+        data-title="Dilan 1990"
+        data-author="Pidi Baiq"
+        data-desc="Kisah cinta unik dan ikonik antara Dilan dan Milea di Bandung tahun 1990."
+      >Detail</button>
+      <button class="btn add-cart"
+      data-id="b003"
+      data-title="Dilan 1990"
+      data-price="99000">
++ Keranjang
+</button>
+    </div>
+  </div>
+</article>
+
+<!-- 4. FILOSOFI TERAS -->
+<article class="card card--book"
+data-genre="nonfiksi"
+data-price="125000"
+data-popular="false">
+  <div class="card__media">
+    <picture>
+      <source srcset="images/filosofi-teras.avif" type="image/avif">
+      <img src="images/filosofi-teras.avif" alt="Filosofi Teras" loading="lazy">
+    </picture>
+  </div>
+  <div class="card__body">
+    <h3>Filosofi Teras</h3>
+    <p class="muted">Henry Manampiring • Non-Fiksi</p>
+    <p>Stoikisme untuk hidup tenang.</p>
+    <div class="card__meta">
+      <span class="price">Rp 125.000</span>
+      <button class="btn btn--ghost btn-detail"
+        data-title="Filosofi Teras"
+        data-author="Henry Manampiring"
+        data-desc="Pengenalan filsafat Stoikisme untuk menghadapi kecemasan dan tekanan hidup modern."
+      >Detail</button>
+      <button class="btn add-cart"
+      data-id="b004"
+      data-title="Filosofi Teras"
+      data-price="125000">
++ Keranjang
+</button>
+    </div>
+  </div>
+</article>
+
+<!-- 5. HUJAN -->
+<article class="card card--book"
+data-genre="fiksi"
+data-price="109000"
+data-popular="false">
+  <div class="card__media">
+    <picture>
+      <source srcset="images/hujan.avif" type="image/avif">
+      <img src="images/hujan.avif" alt="Hujan" loading="lazy">
+    </picture>
+  </div>
+  <div class="card__body">
+    <h3>Hujan</h3>
+    <p class="muted">Tere Liye • Fiksi</p>
+    <p>Cinta dan kehilangan.</p>
+    <div class="card__meta">
+      <span class="price">Rp 109.000</span>
+      <button class="btn btn--ghost btn-detail"
+        data-title="Hujan"
+        data-author="Tere Liye"
+        data-desc="Cerita cinta, kehilangan, dan pengorbanan di masa depan dengan emosi yang mendalam."
+      >Detail</button>
+      <button class="btn add-cart"
+      data-id="b003"
+      data-title="Hujan"
+      data-price="99000">
++ Keranjang
+</button>
+    </div>
+  </div>
+</article>
+
+<!-- 6. KOALA KUMAL -->
+<article class="card card--book"
+data-genre="fiksi"
+data-price="67000"
+data-popular="false">
+  <div class="card__media">
+    <picture>
+      <source srcset="images/koala-kumal.avif" type="image/avif">
+      <img src="images/koala-kumal.avif" alt="Koala Kumal" loading="lazy">
+    </picture>
+  </div>
+  <div class="card__body">
+    <h3>Koala Kumal</h3>
+    <p class="muted">Raditya Dika • Fiksi</p>
+    <p>Patah hati dan humor.</p>
+    <div class="card__meta">
+      <span class="price">Rp 67.000</span>
+      <button class="btn btn--ghost btn-detail"
+        data-title="Koala Kumal"
+        data-author="Raditya Dika"
+        data-desc="Kumpulan cerita tentang patah hati, move on, dan keikhlasan dengan humor khas Raditya Dika."
+      >Detail</button>
+      <button class="btn add-cart"
+  data-id="b006"
+  data-title="Koala Kumal"
+  data-price="67000">
++ Keranjang
+</button>
+
+    </div>
+  </div>
+</article>
+
+<!-- 7. LASKAR PELANGI -->
+<article class="card card--book"
+data-genre="fiksi"
+data-price="99000"
+data-popular="true">
+  <div class="card__media">
+    <picture>
+      <source srcset="images/laskar-pelangi.avif" type="image/avif">
+      <img src="images/laskar-pelangi.avif" alt="Laskar Pelangi" loading="lazy">
+    </picture>
+  </div>
+  <div class="card__body">
+    <h3>Laskar Pelangi</h3>
+    <p class="muted">Andrea Hirata • Fiksi</p>
+    <p>Perjuangan pendidikan.</p>
+    <div class="card__meta">
+      <span class="price">Rp 99.000</span>
+      <button class="btn btn--ghost btn-detail"
+        data-title="Laskar Pelangi"
+        data-author="Andrea Hirata"
+        data-desc="Kisah inspiratif anak-anak Belitung yang berjuang meraih pendidikan di tengah keterbatasan."
+      >Detail</button>
+      <button class="btn add-cart"
+  data-id="b007"
+  data-title="Laskar Pelangi"
+  data-price="99000">
++ Keranjang
+</button>
+
+    </div>
+  </div>
+</article>
+
+<!-- 8 -->
+<article class="card card--book"
+data-genre="fiksi"
+data-price="115000"
+data-popular="false">
+  <div class="card__media">
+    <picture>
+      <img src="images/laut-bercerita.avif" alt="Laut Bercerita" loading="lazy">
+    </picture>
+  </div>
+  <div class="card__body">
+    <h3>Laut Bercerita</h3>
+    <p class="muted">Leila S. Chudori • Fiksi</p>
+    <p>Kisah kehilangan dan luka sejarah.</p>
+    <div class="card__meta">
+      <span class="price">Rp 115.000</span>
+      <button class="btn btn--ghost btn-detail"
+        data-title="Laut Bercerita"
+        data-author="Leila S. Chudori"
+        data-desc="Novel tentang aktivis mahasiswa yang hilang pada masa Orde Baru, dilihat dari sudut pandang korban dan keluarga yang ditinggalkan.">
+        Detail
+      </button>
+      <button class="btn add-cart"
+  data-id="b008"
+  data-title="Laut Bercerita"
+  data-price="115000">
++ Keranjang
+</button>
+
+    </div>
+  </div>
+</article>
+
+<!-- 9 -->
+<article class="card card--book"
+data-genre="romance"
+data-price="99000"
+data-popular="false">
+  <div class="card__media">
+    <picture>
+      <img src="images/mariposa.avif" alt="Mariposa" loading="lazy">
+    </picture>
+  </div>
+  <div class="card__body">
+    <h3>Mariposa</h3>
+    <p class="muted">Luluk HF • Romance</p>
+    <p>Cinta remaja penuh perjuangan.</p>
+    <div class="card__meta">
+      <span class="price">Rp 99.000</span>
+      <button class="btn btn--ghost btn-detail"
+        data-title="Mariposa"
+        data-author="Luluk HF"
+        data-desc="Perjuangan Acha yang gigih mendekati Iqbal, cowok dingin jenius, dalam kisah cinta remaja yang manis dan emosional.">
+        Detail
+      </button>
+      <button class="btn add-cart"
+  data-id="b009"
+  data-title="Mariposa"
+  data-price="99000">
++ Keranjang
+</button>
+
+    </div>
+  </div>
+</article>
+
+<!-- 10 -->
+<article class="card card--book"
+data-genre="fiksi"
+data-price="125000"
+data-popular="false">
+  <div class="card__media">
+    <picture>
+      <img src="images/Negeri-5-Menara.avif" alt="Negeri 5 Menara" loading="lazy">
+    </picture>
+  </div>
+  <div class="card__body">
+    <h3>Negeri 5 Menara</h3>
+    <p class="muted">Ahmad Fuadi • Fiksi</p>
+    <p>Mimpi besar para santri.</p>
+    <div class="card__meta">
+      <span class="price">Rp 125.000</span>
+      <button class="btn btn--ghost btn-detail"
+        data-title="Negeri 5 Menara"
+        data-author="Ahmad Fuadi"
+        data-desc="Kisah enam santri dengan mimpi besar yang ditempa oleh disiplin, persahabatan, dan keyakinan di pesantren.">
+        Detail
+      </button>
+      <button class="btn add-cart"
+  data-id="b010"
+  data-title="Negeri 5 Menara"
+  data-price="125000">
++ Keranjang
+</button>
+
+    </div>
+  </div>
+</article>
+
+<!-- 11 -->
+<article class="card card--book"
+data-genre="nonfiksi"
+data-price="150000"
+data-popular="false">
+  <div class="card__media">
+    <picture>
+      <img src="images/Nanti-Kita-Cerita-Tentang-Hari-Ini.avif" alt="NKCTHI" loading="lazy">
+    </picture>
+  </div>
+  <div class="card__body">
+    <h3>Nanti Kita Cerita Tentang Hari Ini</h3>
+    <p class="muted">Marchella FP • Non-Fiksi</p>
+    <p>Refleksi perasaan manusia.</p>
+    <div class="card__meta">
+      <span class="price">Rp 150.000</span>
+      <button class="btn btn--ghost btn-detail"
+        data-title="Nanti Kita Cerita Tentang Hari Ini"
+        data-author="Marchella FP"
+        data-desc="Kumpulan tulisan reflektif tentang luka, keluarga, kehilangan, dan penerimaan diri dalam kehidupan sehari-hari.">
+        Detail
+      </button>
+      <button class="btn add-cart"
+  data-id="b011"
+  data-title="Nanti Kita Cerita Tentang Hari Ini"
+  data-price="150000">
++ Keranjang
+</button>
+
+    </div>
+  </div>
+</article>
+
+<!-- 12 -->
+<article class="card card--book"
+data-genre="fiksi"
+data-price="99000"
+data-popular="false">
+  <div class="card__media">
+    <picture>
+      <img src="images/rapijali.avif" alt="Rapijali" loading="lazy">
+    </picture>
+  </div>
+  <div class="card__body">
+    <h3>Rapijali</h3>
+    <p class="muted">Dee Lestari • Fiksi</p>
+    <p>Musik dan pencarian jati diri.</p>
+    <div class="card__meta">
+      <span class="price">Rp 99.000</span>
+      <button class="btn btn--ghost btn-detail"
+        data-title="Rapijali"
+        data-author="Dee Lestari"
+        data-desc="Kisah remaja berbakat musik yang berjuang menemukan jati diri di tengah cinta, keluarga, dan realitas hidup.">
+        Detail
+      </button>
+      <button class="btn add-cart"
+  data-id="b012"
+  data-title="Rapijali"
+  data-price="99000">
++ Keranjang
+</button>
+
+    </div>
+  </div>
+</article>
+
+<!-- 13 -->
+<article class="card card--book"
+data-genre="fiksi"
+data-price="109000"
+data-popular="false">
+  <div class="card__media">
+    <picture>
+      <img src="images/selena.avif" alt="Selena" loading="lazy">
+    </picture>
+  </div>
+  <div class="card__body">
+    <h3>Selena</h3>
+    <p class="muted">Tere Liye • Fiksi</p>
+    <p>Dunia paralel penuh misteri.</p>
+    <div class="card__meta">
+      <span class="price">Rp 109.000</span>
+      <button class="btn btn--ghost btn-detail"
+        data-title="Selena"
+        data-author="Tere Liye"
+        data-desc="Awal kisah perjalanan Selena dalam dunia paralel yang penuh rahasia, pengkhianatan, dan kekuatan tersembunyi.">
+        Detail
+      </button>
+      <button class="btn add-cart"
+  data-id="b013"
+  data-title="Selena"
+  data-price="109000">
++ Keranjang
+</button>
+
+    </div>
+  </div>
+</article>
+
+<!-- 14 -->
+<article class="card card--book"
+data-genre="fiksi"
+data-price="93000"
+data-popular="false">
+  <div class="card__media">
+    <picture>
+      <img src="images/seporsi-mie-ayam-sebelum-meninggal.avif" alt="Seporsi Mie Ayam Sebelum Meninggal" loading="lazy">
+    </picture>
+  </div>
+  <div class="card__body">
+    <h3>Seporsi Mie Ayam Sebelum Meninggal</h3>
+    <p class="muted">Brian Khrisna • Fiksi</p>
+    <p>Refleksi hidup sederhana.</p>
+    <div class="card__meta">
+      <span class="price">Rp 93.000</span>
+      <button class="btn btn--ghost btn-detail"
+        data-title="Seporsi Mie Ayam Sebelum Meninggal"
+        data-author="Brian Khrisna"
+        data-desc="Cerita tentang makna hidup, penyesalan, dan kenangan yang disampaikan dengan sederhana namun menyentuh.">
+        Detail
+      </button>
+      <button class="btn add-cart"
+  data-id="b014"
+  data-title="Seporsi Mie Ayam Sebelum Meninggal"
+  data-price="93000">
++ Keranjang
+</button>
+
+    </div>
+  </div>
+</article>
+
+<!-- 15 -->
+<article class="card card--book"
+data-genre="fiksi"
+data-price="88000"
+data-popular="false">
+  <div class="card__media">
+    <picture>
+      <img src="images/sketsa-mendung.avif" alt="Sketsa Mendung" loading="lazy">
+    </picture>
+  </div>
+  <div class="card__body">
+    <h3>Sketsa Mendung</h3>
+    <p class="muted">Wira Nagara • Fiksi</p>
+    <p>Puisi tentang perasaan.</p>
+    <div class="card__meta">
+      <span class="price">Rp 88.000</span>
+      <button class="btn btn--ghost btn-detail"
+        data-title="Sketsa Mendung"
+        data-author="Wira Nagara"
+        data-desc="Kumpulan puisi yang menggambarkan kesedihan, kehilangan, dan keindahan perasaan manusia.">
+        Detail
+      </button>
+      <button class="btn add-cart"
+  data-id="b015"
+  data-title="Sketsa Mendung"
+  data-price="88000">
++ Keranjang
+</button>
+
+    </div>
+  </div>
+</article>
+
+<!-- 16 -->
+<article class="card card--book"
+data-genre="fiksi"
+data-price="99000"
+data-popular="true">
+  <div class="card__media">
+    <picture>
+      <img src="images/Supernova.avif" alt="Supernova" loading="lazy">
+    </picture>
+  </div>
+  <div class="card__body">
+    <h3>Supernova 1</h3>
+    <p class="muted">Dee Lestari • Fiksi</p>
+    <p>Sains dan spiritualitas.</p>
+    <div class="card__meta">
+      <span class="price">Rp 99.000</span>
+      <button class="btn btn--ghost btn-detail"
+        data-title="Supernova 1"
+        data-author="Dee Lestari"
+        data-desc="Novel yang memadukan filsafat, sains, dan spiritualitas dalam pencarian makna kehidupan manusia.">
+        Detail
+      </button>
+      <button class="btn add-cart"
+  data-id="b016"
+  data-title="Supernova 1"
+  data-price="99000">
++ Keranjang
+</button>
+
+    </div>
+  </div>
+</article>
+
+<!-- 17 -->
+<article class="card card--book"
+data-genre="fiksi"
+data-price="66000"
+data-popular="false">
+  <div class="card__media">
+    <picture>
+      <img src="images/timun-jelita.avif" alt="Timun Jelita" loading="lazy">
+    </picture>
+  </div>
+  <div class="card__body">
+    <h3>Timun Jelita</h3>
+    <p class="muted">Raditya Dika • Fiksi</p>
+    <p>Kisah musik dan mimpi.</p>
+    <div class="card__meta">
+      <span class="price">Rp 66.000</span>
+      <button class="btn btn--ghost btn-detail"
+        data-title="Timun Jelita"
+        data-author="Raditya Dika"
+        data-desc="Cerita perjuangan band indie dalam mengejar mimpi di tengah realitas keras dunia musik.">
+        Detail
+      </button>
+      <button class="btn add-cart"
+  data-id="b017"
+  data-title="Timun Jelita"
+  data-price="66000">
++ Keranjang
+</button>
+
+    </div>
+  </div>
+</article>
+
+<!-- 18 -->
+<article class="card card--book"
+data-genre="fiksi"
+data-price="76000"
+data-popular="false">
+  <div class="card__media">
+    <picture>
+      <img src="images/timun-jelita-volume-2.avif" alt="Timun Jelita 2" loading="lazy">
+    </picture>
+  </div>
+  <div class="card__body">
+    <h3>Timun Jelita 2</h3>
+    <p class="muted">Raditya Dika • Fiksi</p>
+    <p>Lanjutan perjalanan band.</p>
+    <div class="card__meta">
+      <span class="price">Rp 76.000</span>
+      <button class="btn btn--ghost btn-detail"
+        data-title="Timun Jelita 2"
+        data-author="Raditya Dika"
+        data-desc="Kelanjutan kisah perjuangan band menghadapi popularitas, konflik internal, dan kedewasaan.">
+        Detail
+      </button>
+      <button class="btn add-cart"
+  data-id="b018"
+  data-title="Timun Jelita 2"
+  data-price="76000">
++ Keranjang
+</button>
+
+    </div>
+  </div>
+</article>
+
+<!-- 19 -->
+<article class="card card--book"
+data-genre="fiksi"
+data-price="109000"
+data-popular="false">
+  <div class="card__media">
+    <picture>
+      <img src="images/matahari-minor.avif" alt="Matahari Minor" loading="lazy">
+    </picture>
+  </div>
+  <div class="card__body">
+    <h3>Matahari Minor</h3>
+    <p class="muted">Bene Dion • Fiksi</p>
+    <p>Satir sosial jenaka.</p>
+    <div class="card__meta">
+      <span class="price">Rp 109.000</span>
+      <button class="btn btn--ghost btn-detail"
+        data-title="Matahari Minor"
+        data-author="Bene Dion"
+        data-desc="Kumpulan cerita satir tentang realitas sosial, disampaikan dengan humor tajam dan kritis.">
+        Detail
+      </button>
+      <button class="btn add-cart"
+  data-id="b019"
+  data-title="Matahari Minor"
+  data-price="109000">
++ Keranjang
+</button>
+
+    </div>
+  </div>
+</article>
+
+<!-- 20 -->
+<article class="card card--book"
+  data-genre="fiksi"
+  data-price="66000"
+  data-popular="false"
+>
+>
+  <div class="card__media">
+    <picture>
+      <img src="images/manusia-setengah-salmon.avif" alt="Manusia Setengah Salmon" loading="lazy">
+    </picture>
+  </div>
+  <div class="card__body">
+    <h3>Manusia Setengah Salmon</h3>
+    <p class="muted">Raditya Dika • Fiksi</p>
+    <p>Humor tentang pendewasaan.</p>
+    <div class="card__meta">
+      <span class="price">Rp 66.000</span>
+      <button class="btn btn--ghost btn-detail"
+        data-title="Manusia Setengah Salmon"
+        data-author="Raditya Dika"
+        data-desc="Kisah-kisah humor tentang perubahan hidup, patah hati, dan proses menjadi dewasa.">
+        Detail
+      </button>
+      <button class="btn add-cart"
+  data-id="b020"
+  data-title="Manusia Setengah Salmon"
+  data-price="66000">
++ Keranjang
+</button>
+
+    </div>
+  </div>
+</article>
+<!-- 21 -->
+<article class="card card--book"
+data-genre="fiksi"
+data-price="138000"
+data-popular="false">
+  <div class="card__media">
+    <picture>
+      <img src="images/ahunger.jpg" alt="A Hunger" loading="lazy">
+    </picture>
+  </div>
+  <div class="card__body">
+    <h3>A Hunger</h3>
+    <p class="muted">Franz Kafka • Fiksi</p>
+    <p>kehidupan dan Krisis Artistik.</p>
+    <div class="card__meta">
+      <span class="price">Rp 138.000</span>
+      <button class="btn btn--ghost btn-detail"
+        data-title="A Hunger"
+        data-author="Franz Kafka"
+        data-desc="seorang pria yang menjalani puasa ekstrem sebagai bagian dari pertunjukan seni. Melalui puasa yang panjang dan melelahkan, dia menjadi objek keingintahuan publik melalui penilaian. ">
+        Detail
+      </button>
+      <button class="btn add-cart"
+  data-id="b021"
+  data-title="A Hunger"
+  data-price="138000">
++ Keranjang
+</button>
+
+    </div>
+  </div>
+</article>
+<!-- 22 -->
+<article class="card card--book"
+data-genre="fiksi"
+data-price="145000"
+data-popular="true">
+
+  <div class="card__media">
+    <picture>
+      <img src="images/metamorphosis.jpg" alt="Metamorphosis" loading="lazy">
+    </picture>
+  </div>
+
+  <div class="card__body">
+    <h3>Metamorphosis</h3>
+    <p class="muted">Franz Kafka • Fiksi</p>
+    <p>Transformasi fisik sebagai simbol keterasingan.</p>
+
+    <div class="card__meta">
+      <span class="price">Rp 145.000</span>
+      <button class="btn btn--ghost btn-detail"
+        data-title="Metamorphosis"
+        data-author="Franz Kafka"
+        data-desc="Gregor Samsa terbangun sebagai serangga raksasa. Sebuah alegori kuat tentang alienasi, keluarga, dan identitas.">
+        Detail
+      </button>
+      <button class="btn add-cart"
+  data-id="b022"
+  data-title="Metamorphosis"
+  data-price="145000">
++ Keranjang
+</button>
+
+    </div>
+  </div>
+</article>
+<!-- 23 -->
+<article class="card card--book"
+data-genre="fiksi"
+data-price="155000"
+data-popular="true">
+
+  <div class="card__media">
+    <picture>
+      <img src="images/nlh.jpg" alt="No Longer Human" loading="lazy">
+    </picture>
+  </div>
+
+  <div class="card__body">
+    <h3>No Longer Human</h3>
+    <p class="muted">Osamu Dazai • Fiksi</p>
+    <p>Potret depresi dan keterasingan manusia.</p>
+
+    <div class="card__meta">
+      <span class="price">Rp 155.000</span>
+      <button class="btn btn--ghost btn-detail"
+        data-title="No Longer Human"
+        data-author="Osamu Dazai"
+        data-desc="Kisah seorang pria yang merasa gagal menjadi manusia. Novel klasik Jepang tentang depresi dan kehilangan makna hidup.">
+        Detail
+      </button>
+      <button class="btn add-cart"
+  data-id="b023"
+  data-title="No Longer Human"
+  data-price="155000">
++ Keranjang
+</button>
+
+    </div>
+  </div>
+</article>
+<!-- 24 -->
+<article class="card card--book"
+data-genre="fiksi"
+data-price="132000"
+data-popular="false">
+
+  <div class="card__media">
+    <picture>
+      <img src="images/white knight.jpg" alt="White Nights" loading="lazy">
+    </picture>
+  </div>
+
+  <div class="card__body">
+    <h3>White Nights</h3>
+    <p class="muted">Fyodor Dostoyevsky • Fiksi</p>
+    <p>Kesepian, mimpi, dan cinta singkat.</p>
+
+    <div class="card__meta">
+      <span class="price">Rp 132.000</span>
+      <button class="btn btn--ghost btn-detail"
+        data-title="White Nights"
+        data-author="Fyodor Dostoyevsky"
+        data-desc="Cerita pendek tentang seorang pemimpi yang mengalami cinta singkat namun membekas di St. Petersburg.">
+        Detail
+      </button>
+      <button class="btn add-cart"
+  data-id="b024"
+  data-title="White Nights"
+  data-price="132000">
++ Keranjang
+</button>
+
+    </div>
+  </div>
+</article>
+
+
+<!-- 25 -->
+<article class="card card--book"
+data-genre="fiksi"
+data-price="135000"
+data-popular="false">
+  <div class="card__media">
+    <picture>
+      <img src="images/dosa.png" alt="Dosa" loading="lazy">
+    </picture>
+  </div>
+  <div class="card__body">
+    <h3>Dosa</h3>
+    <p class="muted">Rafi Ikbar Sugara • Fiksi</p>
+    <p>Kesalahan dan pertanggungjawaban.</p>
+    <div class="card__meta">
+      <span class="price">Rp 135.000</span>
+      <button class="btn btn--ghost btn-detail"
+        data-title="Dosa"
+        data-author="Rafi Ikbar Sugara"
+        data-desc="Refleksi mendalam tentang dosa, moralitas, dan konsekuensi pilihan manusia.">
+        Detail
+      </button>
+      <button class="btn add-cart"
+  data-id="b025"
+  data-title="Dosa"
+  data-price="135000">
++ Keranjang
+</button>
+
+    </div>
+  </div>
+</article>
+
+<!-- 28 -->
+<article class="card card--book"
+data-genre="nonfiksi"
+data-price="168000"
+data-popular="true">
+
+  <div class="card__media">
+    <picture>
+      <img src="images/rdpd.jpg" alt="Rich Dad Poor Dad" loading="lazy">
+    </picture>
+  </div>
+
+  <div class="card__body">
+    <h3>Rich Dad Poor Dad</h3>
+    <p class="muted">Robert T. Kiyosaki • Nonfiksi</p>
+    <p>Pendidikan finansial dan pola pikir kekayaan.</p>
+
+    <div class="card__meta">
+      <span class="price">Rp 168.000</span>
+      <button class="btn btn--ghost btn-detail"
+        data-title="Rich Dad Poor Dad"
+        data-author="Robert T. Kiyosaki"
+        data-desc="Buku klasik tentang literasi keuangan yang membandingkan dua pola pikir ayah kaya dan ayah miskin. Mengajarkan pentingnya aset, investasi, dan kebebasan finansial dibanding hanya bergantung pada gaji.">
+        Detail
+      </button>
+      <button class="btn add-cart"
+  data-id="b028"
+  data-title="Rich Dad Poor Dad"
+  data-price="168000">
++ Keranjang
+</button>
+
+    </div>
+  </div>
+</article>
+
+
+<!-- 29 -->
+<article class="card card--book"
+data-genre="fiksi"
+data-price="189000"
+data-popular="true">
+  <div class="card__media">
+    <picture>
+      <img src="images/the brothher.webp" alt="The Brothers Karamazov" loading="lazy">
+    </picture>
+  </div>
+  <div class="card__body">
+    <h3>The Brothers Karamazov</h3>
+    <p class="muted">Fyodor Dostoyevsky • Fiksi</p>
+    <p>Iman, moral, dan keluarga.</p>
+    <div class="card__meta">
+      <span class="price">Rp 189.000</span>
+      <button class="btn btn--ghost btn-detail"
+        data-title="The Brothers Karamazov"
+        data-author="Fyodor Dostoyevsky"
+        data-desc="Novel epik tentang konflik iman, kebebasan, dan dosa dalam sebuah keluarga.">
+        Detail
+      </button>
+      <button class="btn add-cart"
+  data-id="b029"
+  data-title="The Brothers Karamazov"
+  data-price="189000">
++ Keranjang
+</button>
+
+    </div>
+  </div>
+</article>
+
+<!-- 30 -->
+<article class="card card--book"
+data-genre="fiksi"
+data-price="158000"
+data-popular="true">
+  <div class="card__media">
+    <picture>
+      <img src="images/the.jpg" alt="The Trial" loading="lazy">
+    </picture>
+  </div>
+  <div class="card__body">
+    <h3>The Trial</h3>
+    <p class="muted">Franz Kafka • Fiksi</p>
+    <p>Hukum absurd dan ketakutan.</p>
+    <div class="card__meta">
+      <span class="price">Rp 158.000</span>
+      <button class="btn btn--ghost btn-detail"
+        data-title="The Trial"
+        data-author="Franz Kafka"
+        data-desc="Seorang pria diadili tanpa mengetahui kesalahannya—simbol birokrasi dan absurditas hukum.">
+        Detail
+      </button>
+      <button class="btn add-cart"
+  data-id="b030"
+  data-title="The Trial"
+  data-price="158000">
++ Keranjang
+</button>
+
+    </div>
+  </div>
+</article>
+
+<!-- 31 -->
+<article class="card card--book"
+data-genre="filsafat"
+data-price="165000"
+data-popular="true">
+  <div class="card__media">
+    <picture>
+      <img src="images/tso.jpg" alt="Thus Spoke Zarathustra" loading="lazy">
+    </picture>
+  </div>
+  <div class="card__body">
+    <h3>The Secret History of the World</h3>
+    <p class="muted">Jonathan Black • Filsafat</p>
+    <p>tradisi mistis dan ajaran rahasia</p>
+    <div class="card__meta">
+      <span class="price">Rp 165.000</span>
+      <button class="btn btn--ghost btn-detail"
+        data-title="The Secret History of the World"
+        data-author="Jonathan Black"
+        data-desc="perjalanan panjang sejarah manusia sejak peradaban kuno dengan menelusuri ajaran-ajaran rahasia yang diwariskan dari generasi ke generasi. Kisah dimulai dari Mesir Kuno dan Yunani, ketika para filsuf, pendeta, dan inisiat menyimpan pengetahuan tentang alam semesta, jiwa manusia, dan hukum kosmis dalam simbol, mitos, dan ritual. Pengetahuan ini tidak diajarkan secara terbuka, melainkan disampaikan secara tersembunyi kepada mereka yang dianggap siap menerimanya.">
+        Detail
+      </button>
+      <button class="btn add-cart"
+      data-id="b031"
+      data-title="The Trial"
+      data-price="172000">
+    + Keranjang
+    </button>
+    </div>
+  </div>
+</article>
+
+<!-- 33 -->
+<article class="card card--book"
+data-genre="filsafat"
+data-price="168000"
+data-popular="false">
+  <div class="card__media">
+    <picture>
+      <img src="images/zara.jpg" alt="Zarathustra" loading="lazy">
+    </picture>
+  </div>
+  <div class="card__body">
+    <h3>Zarathustra</h3>
+    <p class="muted">Friedrich Nietzsche • Filsafat</p>
+    <p>Refleksi eksistensi manusia.</p>
+    <div class="card__meta">
+      <span class="price">Rp 168.000</span>
+      <button class="btn btn--ghost btn-detail"
+        data-title="Zarathustra"
+        data-author="Friedrich Nietzsche"
+        data-desc="Edisi reflektif karya Zarathustra tentang kebebasan, nilai, dan eksistensi manusia.">
+        Detail
+      </button>
+      <button class="btn add-cart"
+      data-id="b033"
+      data-title="Zarathustra"
+      data-price="168000">
+    + Keranjang
+    </button>
+    </div>
+  </div>
+</article>
+
+        </div>
+      </div>
+    </section>
+
+<!-- Terlaris -->
+<section id="terlaris" class="section">
+  <div class="container">
+    <h2>Terlaris minggu ini</h2>
+
+    <div class="grid grid--4">
+      <!-- 1. No Longer Human -->
+      <div class="mini-card">
+        <img 
+          src="images/nlh.jpg" 
+          alt="Cover buku No Longer Human" 
+          class="mini-card__cover"
+          style="width: 100%; height: auto; border-radius: 4px;"
+        />
+        <div class="mini-card__body">
+          <p><strong>No Longer Human</strong></p>
+          <span class="muted">Rp 155.000</span>
+        </div>
+      </div>
+
+      <!-- 2. Thus Spoke Zarathustra -->
+      <div class="mini-card">
+        <img 
+          src="images/zara.jpg" 
+          alt="Cover Buku Thus Spoke Zarathustra" 
+          class="mini-card__cover"
+          style="width: 100%; height: auto; border-radius: 4px;"
+        />
+        <div class="mini-card__body">
+          <p><strong>Thus Spoke Zarathustra</strong></p>
+          <span class="muted">Rp 168.000</span>
+        </div>
+      </div>
+
+      <!-- 3. Metamorphosis -->
+      <div class="mini-card">
+        <img 
+          src="images/metamorphosis.jpg" 
+          alt="Cover buku Metamorphosis" 
+          class="mini-card__cover"
+          style="width: 100%; height: auto; border-radius: 4px;"
+        />
+        <div class="mini-card__body">
+          <p><strong>Metamorphosis</strong></p>
+          <span class="muted">Rp 145.000</span>
+        </div>
+      </div>
+
+      <!-- 4. The Trial -->
+      <div class="mini-card">
+        <img 
+          src="images/the.jpg" 
+          alt="Cover buku The Trial" 
+          class="mini-card__cover"
+          style="width: 100%; height: auto; border-radius: 4px;"
+        />
+        <div class="mini-card__body">
+          <p><strong>The Trial</strong></p>
+          <span class="muted">Rp 158.000</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    </section>
+
+    <!-- Tentang -->
+    <section id="tentang" class="section section--alt">
+      <div class="container">
+        <h2>Tentang Buku-Ku</h2>
+        <p>
+          Kami percaya buku adalah jembatan ke pemahaman yang lebih dalam. Di Buku-ku, kurasi kami menyeimbangkan
+          kenyamanan membaca dengan kualitas isi yang dapat diandalkan. Situs ini statis sebagai demo — mudah di-deploy,
+          cepat dimuat, dan siap dikembangkan menjadi katalog dinamis.
+        </p>
+      </div>
+    </section>
+
+    <!-- Kontak -->
+    <section id="kontak" class="section">
+      <div class="container">
+        <h2>Kontak</h2>
+        <div class="contact">
+          <div>
+            <p><strong>Email:</strong> halo@buku_ku.id</p>
+            <p><strong>Alamat:</strong> Sepatan, Banten</p>
+          </div>
+          <form class="contact__form" onsubmit="return false" aria-label="Form kontak">
+            <input type="text" placeholder="Nama" aria-label="Nama" />
+            <input type="email" placeholder="Email" aria-label="Email" />
+            <textarea rows="4" placeholder="Pesan" aria-label="Pesan"></textarea>
+            <button class="btn btn--primary" type="button">Kirim</button>
+            <p class="muted">Form ini hanya tampilan (tanpa backend).</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimoni">
+      <h2>Apa Kata Pembaca</h2>
+    
+      <div class="testi-grid">
+        <div class="testi-card">
+          ⭐⭐⭐⭐⭐
+          <p>“Bukunya original dan pengiriman cepat!”</p>
+          <span>- Rina, Bandung</span>
+        </div>
+    
+        <div class="testi-card">
+          ⭐⭐⭐⭐☆
+          <p>“Pilihan buku lengkap, tampilannya enak.”</p>
+          <span>- Andi, Jakarta</span>
+        </div>
+    
+        <div class="testi-card">
+          ⭐⭐⭐⭐⭐
+          <p>“Harga bersaing, recomended.”</p>
+          <span>- Sari, Surabaya</span>
+        </div>
+      </div>
+    </section>
+    
+
+    <div class="modal" id="bookModal">
+      <div class="modal__overlay"></div>
+      <div class="modal__content">
+        <button class="modal__close">&times;</button>
+    
+        <h3 id="modalTitle"></h3>
+        <p class="muted" id="modalAuthor"></p>
+        <p id="modalDesc"></p>
+    
+        <div class="modal__footer">
+          <span class="price" id="modalPrice"></span>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p class="muted">© 2025 Buku-Ku. Semua hak dilindungi.</p>
+        <div class="footer__links">
+          <a href="#tentang">Tentang</a>
+          <a href="#katalog">Katalog</a>
+          <a href="#kontak">Kontak</a>
+        </div>
+      </div>
+    </footer>
+    
+    <!-- POPUP CART -->
+<div class="cart-modal" id="cartModal">
+  <div class="cart-overlay"></div>
+
+  <div class="cart-box">
+    <div class="cart-header">
+      <h3>Keranjang</h3>
+      <button class="cart-close">&times;</button>
+    </div>
+
+    <div class="cart-items" id="cartItems"></div>
+
+    <div class="cart-footer">
+      <strong>Total: <span id="cartTotal">Rp 0</span></strong>
+    </div>
+  </div>
+</div>
+
+    <script src="script.js"></script>
+    <script src="cart.js"></script>
+
+
+  </body>
+</html>
