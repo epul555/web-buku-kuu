@@ -7,6 +7,33 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeBtn = modal.querySelector(".modal__close");
   const overlay = modal.querySelector(".modal__overlay");
 
+  const loginBtn = document.getElementById("loginBtn");
+  const loginModal = document.getElementById("loginModal");
+  const closeLogin = document.getElementById("closeLogin");
+
+  loginBtn.onclick = () => {
+    loginModal.style.display = "flex";
+  };
+
+  closeLogin.onclick = () => {
+    loginModal.style.display = "none";
+  };
+
+  window.onclick = (e) => {
+    if (e.target === loginModal) {
+      loginModal.style.display = "none";
+    }
+  };
+
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("bookModal");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalAuthor = document.getElementById("modalAuthor");
+  const modalDesc = document.getElementById("modalDesc");
+
+  const closeBtn = modal.querySelector(".modal__close");
+  const overlay = modal.querySelector(".modal__overlay");
+
   // Ambil semua tombol detail
   const detailButtons = document.querySelectorAll(".btn-detail");
 
@@ -137,4 +164,5 @@ prv.addEventListener('click', () =>{
 
 slider();
 // cart
+
 
