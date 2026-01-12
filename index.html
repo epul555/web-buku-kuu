@@ -1247,51 +1247,41 @@ data-popular="false">
           cepat dimuat, dan siap dikembangkan menjadi katalog dinamis.
         </p>
       </div>
-    </section>
-
-    <!-- Kontak -->
     <section id="kontak" class="section">
-      <div class="container">
-        <h2>Kontak</h2>
-        <div class="contact">
-          <div>
-            <p><strong>Email:</strong> halo@buku_ku.id</p>
-            <p><strong>Alamat:</strong> Sepatan, Banten</p>
-          </div>
-          <form class="contact__form" onsubmit="return false" aria-label="Form kontak">
-            <input type="text" placeholder="Nama" aria-label="Nama" />
-            <input type="email" placeholder="Email" aria-label="Email" />
-            <textarea rows="4" placeholder="Pesan" aria-label="Pesan"></textarea>
-            <button class="btn btn--primary" type="button">Kirim</button>
-            <p class="muted">Form ini hanya tampilan (tanpa backend).</p>
-          </form>
-        </div>
-      </div>
-    </section>
+  <div class="container">
+    <h2>Kontak</h2>
 
-    <section class="testimoni">
-      <h2>Apa Kata Pembaca</h2>
-    
-      <div class="testi-grid">
-        <div class="testi-card">
-          ⭐⭐⭐⭐⭐
-          <p>“Bukunya original dan pengiriman cepat!”</p>
-          <span>- Rina, Bandung</span>
-        </div>
-    
-        <div class="testi-card">
-          ⭐⭐⭐⭐☆
-          <p>“Pilihan buku lengkap, tampilannya enak.”</p>
-          <span>- Andi, Jakarta</span>
-        </div>
-    
-        <div class="testi-card">
-          ⭐⭐⭐⭐⭐
-          <p>“Harga bersaing, recomended.”</p>
-          <span>- Sari, Surabaya</span>
+    <!-- GRID WRAPPER -->
+    <div class="contact-grid">
+
+      <!-- KIRI -->
+      <div class="contact-left">
+        <form class="contact__form" onsubmit="return false">
+          <input type="text" placeholder="Nama" />
+          <input type="email" placeholder="Email" />
+          <textarea rows="4" placeholder="Pesan"></textarea>
+          <button class="btn btn--primary" type="button">Kirim</button>
+          <p class="muted">Form ini hanya tampilan.</p>
+        </form>
+
+        <div class="contact-info">
+          <p><strong>Email:</strong> halo@bukukuu.id</p>
+          <p><strong>Alamat:</strong> Sepatan, Banten</p>
+          <p><strong>Telepon:</strong> (+21) 6278912</p>
         </div>
       </div>
-    </section>
+
+      <!-- KANAN -->
+      <div class="contact-map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.1763124304093!2d106.58026507531082!3d-6.106946793879519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6a01ab5ac79a3b%3A0xe15f96b9acf5196d!2sPerum%20Duta%20Asri%20Palm%20Perum%20duta%20asri%20palem%205%20No.8%2C%20Sarakan%2C%20Kec.%20Sepatan%2C%20Kabupaten%20Tangerang%2C%20Banten%2015520!5e0!3m2!1sid!2sid!4v1767965083368!5m2!1sid!2sid"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+    </div>
+  </div>
+</section>
     
 
     <div class="modal" id="bookModal">
@@ -1345,4 +1335,5 @@ data-popular="false">
 
 
   </body>
+
 </html>
